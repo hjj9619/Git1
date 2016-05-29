@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--此项目创建于2016/5/29.-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>【 2016/5/29 】</title>
+</head>
+<body>
+<ul>
+  <li>git init :初始化git 仓库， 必须经过这一步才能对你的项目进行版本控制</li>
+  <li>git add :把文件添加到暂存区</li>
+  <li>git status：查看仓库的状态</li>
+  <li>git diff (文件名)：查看（文件名）在工作区与版本库中的区别</li>
+  <li>git commit -m "detail"  ： 将暂存区的内容提交到版本库（当前分支）</li>
+  <li>git reset --hard HEAD^ ：将工作区恢复到上一次提交的状态（commit）</li>
+  <li>git reset --hard HEAD~100：将工作区恢复到前100次提交时的状态（commit）</li>
+  <li>git reset --hard (commit id): 将工作去的内容恢复到 （commit id）的内容</li>
+  <li>git log --pretty=oneline： 将同一个log信息显示到一行</li>
+  <li>git reflog 记录每一次提交(commit)</li>
+  <li>git diff (文件名)：
+    <ol>
+      <li>如果有添加到暂存区，就对比与暂存区中文件的区别</li>
+      <li>如果没有添加到暂存区，就对比与版本库中文件的区别</li>
+    </ol>
+  </li>
+  <li>git diff HEAD -- (文件名)：查看这个文件在工作区 与 最新版本库里边的区别</li>
+  <li>git checkout -- (文件名)：丢弃工作区的修改
+    <ol>
+      <li>一种是( 这个文件 )自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；</li>
+      <li>一种是( 这个文件 )已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。</li>
+      <li>总之就是让这个文件恢复到上一次 git add 或者 git commit 时的状态</li>
+      <li>在工作区被删除的文件， 如果已经提交过了， 也可以通过这种方式来将文件恢复到上次提交的状态</li>
+    </ol>
+  </li>
+  <li>git reset HEAD (文件名) : 可以把暂存区的修改撤销掉， 从新放回工作区(把暂存区清空，并不是提交到版本库) </li>
+  <li>git rm (文件名) ： 删除版本库的（文件名），然后再 commit， 就可以完全删掉这个文件了</li>
+  <li>git remote add origin git@github.com:hjj9619/learngit.git
+    <ol>
+      <li>将本地的仓库与远程仓库进行关联</li>
+    </ol>
+  </li>
+  <li> git push -u origin master: 将本地版本库 master 分支推送到github 远程仓库上
+    <ol>
+      <li>-u : Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来</li>
+    </ol>
+  </li>
+  <li>git push origin master: 推送最新修改
+    <ol>
+      <li> 以后每一次都会把本地版本库中的内容推送到远程仓库</li>
+    </ol>
+  </li>
+
+  <li>
+    ssh-keygen -t rsa -C "your email address"
+    <ol>
+      <li>给本地创建一对密钥（公钥和私钥）</li>
+      <li>id-rsa: 私钥，需要保密</li>
+      <li>id-rsa.pub: 公钥, 可以公开给任何人</li>
+    </ol>
+  </li>
+  <li>在远程仓库中，需要加入你的公钥， 这样你的远程仓库就只有你自己能推送</li>
+
+
+  <li>先创建远程仓库
+    <ol>
+      <li>git clone git@github.com:hjj9619/Git1.git</li>
+      <li>在本地只需要通过 git clone 命令， 将远程仓库克隆到本地就好</li>
+    </ol>
+  </li>
+</ul>
+
+
+
+
+<ul>
+  <li>git checkout -b dev: 创建一个dev 分支， 并且切换到 dev 分支
+    <ol>
+      <li>相当于一下两条命令</li>
+      <li>git branch （分支） ：创建 （分支）</li>
+      <li>git checkout （分支） ： 切换到 （分支）</li>
+    </ol>
+  </li>
+  <li>git branch : 查看分支列表及状态</li>
+  <li>git checkout （指定分支）: 从其他分支切换到（指定分支）</li>
+  <li>git merge (分支)：合并（指定分支）到当前分支</li>
+  <li>git merge --no-ff -m (分支)：合并（指定分支）到当前分支, 并且禁用Ff(快速模式)，-m 还要加上提交的信息</li>
+  <li>git branch -d (指定分支)：删除(指定分支)， 不能删除还没有合并的分支</li>
+  <li>git branch D (指定分支):强制删除（指定分支），不管这个分支是否已经合并</li>
+  <li>git log --graph:可以查看合并分支图</li>
+</ul>
+
+
+<ul>
+  <li>git stash : 将目前尚未提交的工作区域隐藏起来, 这样你的工作区状态也会是干净的</li>
+</ul>
+
+
+
+
+
+</body>
+</html>
