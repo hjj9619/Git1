@@ -30,22 +30,3 @@ Ajax.prototype.get = function(url, fn){
 function ajax() {
 	return new Ajax();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-*5/1
-*5/29
-*7/5
-*8/4
-*8/27 # 9/3
-*/
